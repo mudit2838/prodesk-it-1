@@ -175,7 +175,6 @@ OR use the VS Code Live Server extension.
 
 The project can be deployed using:
 - Vercel
-- Netlify
 
 ---
 
