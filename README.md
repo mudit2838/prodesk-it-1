@@ -11,7 +11,7 @@ The project focuses on frontend fundamentals including responsive layouts, DOM m
 Add your deployed Vercel/Netlify link here.
 
 Example:
-https://your-project-name.vercel.app
+[https://your-project-name.vercel.app](https://prodesk-landing-page-eight.vercel.app)
 
 ---
 
