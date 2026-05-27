@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #222;
+  transition: 0.3s;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #111827;
+  color: #fff;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  z-index: 1000;
+}
+
+body.dark .navbar {
+  background: rgba(17,24,39,0.7);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar nav {
+  margin-left: auto;
+  margin-right: 40px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#themeToggle {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(to right, #dbeafe, #f0f9ff);
+}
+
+body.dark .hero {
+  background: linear-gradient(to right, #111827, #1f2937);
+}
+
+.hero-content h1 {
+  font-size: clamp(2rem, 5.5vw, 3.25rem);
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+}
+
+.cta-btn {
+  padding: 14px 28px;
+  border: none;
+  background: #007bff;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background: #0056b3;
+  transform: scale(1.02);
+}
+
+.about {
+  padding: clamp(50px, 8vh, 80px) clamp(20px, 8vw, 8%);
+  text-align: center;
+}
+
+.about h2 {
+  font-size: clamp(1.8rem, 5vw, 2.25rem);
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.7;
+}
+
+/* Services */
+.services {
+  padding: clamp(50px, 8vh, 80px) clamp(20px, 8vw, 8%);
+  text-align: center;
+}
+
+.services h2 {
+  margin-bottom: 40px;
+  font-size: clamp(1.8rem, 5vw, 2.25rem);
+}
+
+.service-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: #f3f4f6;
+  padding: 30px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+body.dark .card {
+  background: #1f2937;
+}
+
+.card i {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+  background: #111827;
+  color: white;
+  text-align: center;
+  padding: 35px 25px;
+}
+
+.social-icons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icons a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icons a:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.social-icons i {
+  font-size: 22px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    display: none;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  }
+
+  body.dark .nav-links {
+    background: rgba(17, 24, 39, 0.85);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+button:focus,
+a:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 3px;
+}
